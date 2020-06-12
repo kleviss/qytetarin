@@ -66,7 +66,7 @@ class _Tab2State extends State<Tab2> {
             title: const Text('Qytetari IN'),
             //This drop down menu demonstrates that Flutter widgets can be shown over the web view.
             actions: <Widget>[
-              //NavigationControls(_controller.future),
+              NavigationControls(_controller.future),
               SampleMenu(_controller.future),
             ],
 
@@ -83,22 +83,22 @@ class _Tab2State extends State<Tab2> {
               _controller.complete(webViewController);
             },
 //            // TODO(iskakaushik): Remove this when collection literals makes it to stable.
-//            // ignore: prefer_collection_literals
-//            javascriptChannels: <JavascriptChannel>[
-//              _toasterJavascriptChannel(context),
-//            ].toSet(),
-//            navigationDelegate: (NavigationRequest request) {
-//              if (request.url.startsWith('https://www.youtube.com/')) {
-//                print('blocking navigation to $request}');
-//                return NavigationDecision.prevent;
-//              }
-//              if (request.url.startsWith('https://flutter.dev/docs')) {
-//                print('blocking navigation to $request}');
-//                return NavigationDecision.prevent;
-//              }
-//              print('allowing navigation to $request');
-//              return NavigationDecision.navigate;
-//            },
+            // ignore: prefer_collection_literals
+            javascriptChannels: <JavascriptChannel>[
+              _toasterJavascriptChannel(context),
+            ].toSet(),
+            navigationDelegate: (NavigationRequest request) {
+              if (request.url.startsWith('https://www.youtube.com/')) {
+                print('blocking navigation to $request}');
+                return NavigationDecision.prevent;
+              }
+              if (request.url.startsWith('https://flutter.dev/docs')) {
+                print('blocking navigation to $request}');
+                return NavigationDecision.prevent;
+              }
+              print('allowing navigation to $request');
+              return NavigationDecision.navigate;
+            },
             onPageFinished: (String url) {
               print('Tab 2 - Page finished loading: $url');
             },
