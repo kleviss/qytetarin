@@ -11,7 +11,7 @@ description: Flutter App made with &lt;3 from Qëndresa Qytetare - për qytetare
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.1.1+1
+version: 1.1.2+1
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -24,6 +24,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   webview_flutter:
+  url_launcher: ^5.4.10
 
 dev_dependencies:
   flutter_test:
